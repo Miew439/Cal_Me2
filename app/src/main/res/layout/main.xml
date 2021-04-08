@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    style="@style/background_style"
+    tools:context=".MainActivity"
+
+
+    android:layout_width="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="423dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="413dp"
+            android:layout_height="80dp"
+            android:gravity="center"
+            android:text="Main Activity"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="16dp"
+        android:background="@color/LightGreen"
+        android:paddingTop="17dp">
+
+        <ImageButton
+            android:id="@+id/leftArrow"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:contentDescription="@string/previous_day"
+            android:scaleType="centerInside"
+            android:src="@drawable/left_arrow" />
+
+        <TextView
+            android:id="@+id/diary_weekday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/my_text_color"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            tools:text="Friday" />
+
+        <EditText
+            android:id="@+id/setDate"
+            tools:text="25.12.2015"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/diary_weekday"
+            android:layout_centerHorizontal="true"
+            android:inputType="date"
+            android:textColor="@color/my_text_color"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/rightArrow"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:contentDescription="@string/next_day"
+            android:scaleType="centerInside"
+            android:src="@drawable/right_arrow" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="481dp"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:paddingTop="10dp">
+
+                <TableRow android:layout_width="100dp">
+
+                    <TextView
+                        style="@style/diary_table"
+                        android:text="@string/got"
+                        android:textColor="@color/Black"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        style="@style/diary_table"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="30dp"
+                        android:text="Need"
+                        android:textColor="@color/Black"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+                </TableRow>
+
+                <TableRow android:layout_width="219dp">
+
+                    <TextView
+                        android:id="@+id/kcalGot"
+                        style="@style/diary_table"
+                        android:gravity="center"
+                        android:textColor="@color/Black"
+                        android:textSize="22sp"
+                        tools:text="875 kcal" />
+
+                    <TextView
+                        android:id="@+id/kcalNeed"
+                        style="@style/diary_table"
+                        android:gravity="center"
+                        android:paddingLeft="30dp"
+                        android:textColor="@color/Black"
+                        android:textSize="22sp"
+                        tools:text="875 kcal" />
+                </TableRow>
+            </TableLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:paddingTop="30dp">
+
+                <ImageButton
+                    android:id="@+id/diary_dish_add_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:background="@color/white"
+                    android:contentDescription="@string/add_dish"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/fooddd" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.5" />
+
+                <Button
+                    android:id="@+id/btnHistory"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/DarkGreen"
+                    android:onClick="onViewDayDishes"
+                    android:text="History"
+                    android:textAllCaps="false"
+                    android:textColor="@color/my_text_color"
+                    android:textSize="20sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.5" />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:text="@string/notes"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/record"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="40dp"
+                android:hint="@string/your_notes"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_gravity="bottom"
+        android:layout_weight="1"
+        android:background="@color/LightGreen"
+        android:gravity="bottom">
+
+        <ImageButton
+            android:id="@+id/DCalcu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="0.5dp"
+            android:layout_weight="0.25"
+            android:background="@color/white"
+
+            android:padding="20dp"
+            android:src="@drawable/cal" />
+
+        <ImageButton
+            android:id="@+id/DKcal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="0.5dp"
+            android:layout_weight="0.25"
+            android:background="@color/LightGreen"
+            android:padding="20dp"
+            android:src="@drawable/food" />
+
+        <ImageButton
+            android:id="@+id/DEat"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="0.5dp"
+            android:layout_weight="0.25"
+            android:background="@color/white"
+
+            android:padding="20dp"
+            android:src="@drawable/ic_action_name" />
+
+
+    </LinearLayout>
+</LinearLayout>
